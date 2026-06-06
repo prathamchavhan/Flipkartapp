@@ -1,25 +1,38 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-
-const Footer = () => {
+import { View, StyleSheet } from "react-native";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import Ionicons from "react-native-vector-icons/Ionicons";
+function Footer() {
   return (
     <View style={styles.footer}>
-      <Text style={styles.title}>Footer</Text>
+<Ionicons
+  name="home-outline"
+  size={30}
+  color="white"
+/>
+      <MaterialIcons name="search" size={30} color="white" />
+<Ionicons name="heart-outline" size={30} color="white" />
+<Ionicons name="person-outline" size={30} color="white" />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   footer: {
-    backgroundColor: "black",
-  paddingVertical: 19,
-    width: "100%",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
 
-  },
-  title: {
-    color: "white",
-    fontSize: 15,
-    alginItems: "flex-start",
+    height: 70,
+    backgroundColor: "#000",
+
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+
+    borderTopWidth: 1,
+    borderTopColor: "#333",
   },
 });
 
