@@ -1,18 +1,26 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import Ionicons from "react-native-vector-icons/Ionicons";
-function Footer() {
+import { View, StyleSheet, TouchableOpacity } from "react-native";
+import Ionicons from "@react-native-vector-icons/ionicons";
+import MaterialIcons from "@react-native-vector-icons/material-icons";
+
+function Footer({ onHomePress, onSearchPress }) {
   return (
     <View style={styles.footer}>
-<Ionicons
-  name="home-outline"
-  size={30}
-  color="white"
-/>
-      <MaterialIcons name="search" size={30} color="white" />
-<Ionicons name="heart-outline" size={30} color="white" />
-<Ionicons name="person-outline" size={30} color="white" />
+         <TouchableOpacity onPress={onHomePress}>
+                <MaterialIcons name="home" size={30} color="white" />
+         </TouchableOpacity>
+
+     <TouchableOpacity onPress={onSearchPress}>
+           <MaterialIcons name="search" size={30} color="white" />
+         </TouchableOpacity>
+
+      <TouchableOpacity>
+          <MaterialIcons name="favorite" size={30} color="white" />
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+          <MaterialIcons name="person-outline" size={30} color="white" />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -23,16 +31,11 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-
     height: 70,
     backgroundColor: "#000",
-
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-
-    borderTopWidth: 1,
-    borderTopColor: "#333",
   },
 });
 
